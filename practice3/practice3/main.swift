@@ -112,3 +112,89 @@ func printTheReverseArray(arr: [String],index: Int)
 }
 
 printTheReverseArray(arr: country, index: country.count-1)
+
+var countrydictionary = ["key": "value",
+                         "IND": "INDIA",
+                         "CAD": "CANADA",
+                         "USA": "UNITED STATE OF AMERICA"
+                        
+                        ]
+print(countrydictionary)
+print(countrydictionary["USA"] ?? "Key not exists")
+print(countrydictionary["USA"]!)
+print(countrydictionary["PAK"] ?? "Key not exists")
+
+if let c = countrydictionary["PAK"]// will dispaly any values and apk = null
+{
+    print(c)
+}
+for c in countrydictionary
+{
+    print(c)
+    print(c.key, c.value)
+}
+countrydictionary  ["PAK"] = "Pakistan"
+for (k,v) in countrydictionary
+{
+    print(k,v)
+}
+
+
+var newC = Dictionary<String, Int>()// declaration
+var newArray : Array<Int>
+
+var mySet = Set<String>()
+mySet.insert("INDIA")
+mySet.insert("CANADA")
+mySet.insert("USA")
+mySet.insert("INDIA")
+print(mySet)
+mySet.insert("RUSSIA")
+print(mySet)
+
+var mySet2 = Set<String>()
+mySet2.insert("INDIA")
+mySet2.insert("PAKISTAN")
+mySet2.insert("NEPAL")
+print(mySet2)
+
+let interSet = mySet.intersection(mySet2)
+print(interSet)
+
+let unionSet = mySet.union(mySet2)
+print(unionSet)
+
+let disJoin = mySet.isDisjoint(with: mySet2)
+print(disJoin)
+
+ let minusSet = mySet.subtracting(mySet2)
+print(minusSet)
+
+let symdiffSet = mySet.symmetricDifference(mySet2) // common in both is removed
+print(symdiffSet)
+
+//let ss = [0: 100, 1: 200]
+//print(ss)
+
+var ss = Dictionary<String, Any>()
+ss["int"] = 100
+ss["string"] = "Hello World"
+ss["dict"] = ["k":"v","ko": 100]
+ss["tuple"] = (100,200)
+for item in ss{
+    if item.value is Int{
+        print("I am Integer :\(item)")
+    }
+    if item.value is String{
+        print("I am String :\(item)")
+    }
+    if item.value is Dictionary<String, Any>
+    {
+        print("I am Dictionary :\(item)")
+    }
+    if item.value is (Int,Int)
+    {
+        print("I am tuple :\(item)")
+    }
+    
+}
